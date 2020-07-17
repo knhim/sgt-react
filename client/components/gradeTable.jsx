@@ -8,7 +8,7 @@ function GradeTable(props) {
   );
 
   return (
-    <table className="table table-bordered table-striped mx-2">
+    <table className="table table-bordered table-striped">
       <thead className="thead-light">
         <tr>
           <th scope="col">Student Name</th>
