@@ -1,8 +1,11 @@
 import React from 'react';
 
-function Header() {
+function Header(props) {
   return (
-    <h1>Student Grade Table</h1>
+    <div className="header">
+      <h1>Student Grade Table</h1>
+      <h4>Average Grade <span className="badge badge-secondary">{props.averageGrade}</span></h4>
+    </div>
   );
 }
 
