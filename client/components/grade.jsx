@@ -2,11 +2,11 @@ import React from 'react';
 
 function Grade(props) {
   return (
-    props.grades.map((object, index) =>
+    props.grades.map((objectGrades, index) =>
       <tr key={index}>
-        <td>{object.name}</td>
-        <td>{object.course}</td>
-        <td>{object.grade}</td>
+        <td>{objectGrades.name}</td>
+        <td>{objectGrades.course}</td>
+        <td>{objectGrades.grade}</td>
       </tr>
     )
   );
