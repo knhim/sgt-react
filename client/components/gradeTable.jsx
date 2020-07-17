@@ -2,6 +2,11 @@ import React from 'react';
 import Grade from './grade';
 
 function GradeTable(props) {
+  const gradesArray = props.grades;
+  const mapGrades = gradesArray.map((objectGrades, index) =>
+    <Grade key={index} name={objectGrades.name} course={objectGrades.course} grade={objectGrades.grade} />
+  );
+
   return (
     <table className="table table-bordered table-striped">
       <thead className="thead-light">
@@ -12,7 +17,7 @@ function GradeTable(props) {
         </tr>
       </thead>
       <tbody>
-        <Grade grades={props.grades} />
+        {mapGrades}
       </tbody>
     </table>
   );
