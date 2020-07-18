@@ -35,28 +35,28 @@ class App extends React.Component {
     const init =
     {
       method: 'POST',
-      headers: 'application/json',
-      body: JSON.strringify(newGrade, null, 2)
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newGrade, null, 2)
     };
-    const fetchRequest = fetch((url, init) => {
-      fetchRequest.then(response => {
-        response.json().then(data => {
-          const newArray = [...this.state.grades];
-          newArray.push(data);
-          this.setState({ grades: newArray });
-        });
+    const fetchRequest = fetch(url, init);
+    fetchRequest.then(response => {
+      response.json().then(data => {
+        const newArray = [...this.state.grades];
+        newArray.push(data);
+        this.setState({ grades: newArray });
       });
     });
-
   }
 
   render() {
     const averageGrade = this.getAverageGrade();
     return (
       <div className="container">
-        <Header averageGrade={averageGrade}/>
-        <GradeTable grades={this.state.grades}/>
-        <GradeForm/>
+        <Header averageGrade={averageGrade} />
+        <div className="row">
+          <GradeTable grades={this.state.grades} />
+          <GradeForm onSubmit={this.addNewGrade} />
+        </div>
       </div>
 
     );

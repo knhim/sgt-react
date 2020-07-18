@@ -3,28 +3,59 @@ import React from 'react';
 export default class GradeForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { initialState: '' };
-    this.handleChange = this.handleChange.bind(this);
+    this.state =
+    {
+      name: '',
+      course: '',
+      grade: ''
+    };
+    this.handleChangeName = this.handleChangeName.bind(this);
+    this.handleChangeCourse = this.handleChangeCourse.bind(this);
+    this.handleChangeGrade = this.handleChangeGrade.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ initialState: event.target.value });
+  handleChangeName(event) {
+    this.setState({ name: event.target.value });
+  }
+
+  handleChangeCourse(event) {
+    this.setState({ course: event.target.value });
+  }
+
+  handleChangeGrade(event) {
+    this.setState({ grade: event.target.value });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const addNewGrade = {
+      name: this.state.name,
+      course: this.state.course,
+      grade: this.state.grade
+    };
+    this.props.onSubmit(addNewGrade);
+    this.setState({
+      name: '',
+      course: '',
+      grade: ''
+    });
   }
 
   render() {
     return (
-      <>
-        <form>
-          <label>Name</label>
-          <input type="text" value={this.state.initialState} onChange={this.handleChange} />
-          <label>Course</label>
-          <input type="text" />
-          <label>Grade</label>
-          <input type="text" />
+      <div className="col-4">
+        <form onSubmit={this.handleSubmit}>
+          <label><i className="fa fa-user"></i></label>
+          <input type="text" placeholder="Name" value={this.state.name} onChange={this.handleChangeName} />
+          <label><i className="fa fa-list-alt"></i></label>
+          <input type="text" placeholder="Course" value={this.state.course} onChange={this.handleChangeCourse}/>
+          <label><i className="fa fa-graduation-cap"></i></label>
+          <input type="text" placeholder="Grade" value={this.state.grade} onChange={this.handleChangeGrade} />
+          <button type="submit">Add</button>
+          <button type="reset">Cancel</button>
         </form>
-        <button>Add</button>
-        <button>Cancel</button>
-      </>
+      </div>
     );
   }
 }
