@@ -17,24 +17,6 @@
       "name": "Douglas Crockford",
       "course": "JavaScript",
       "grade": 100
-    },
-    {
-      "name": "Kevin",
-      "course": "React",
-      "grade": "50",
-      "id": 33
-    },
-    {
-      "name": "Norman",
-      "course": "History",
-      "grade": "75",
-      "id": 34
-    },
-    {
-      "name": "Billy Bob",
-      "course": "Node ",
-      "grade": "80",
-      "id": 35
     }
   ]
 }
