@@ -34,7 +34,7 @@ export default class GradeForm extends React.Component {
       course: this.state.course,
       grade: this.state.grade
     };
-    this.props.onSubmit(addNewGrade);
+    this.props.onAdd(addNewGrade);
     this.setState({
       name: '',
       course: '',
