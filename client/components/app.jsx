@@ -24,7 +24,7 @@ class App extends React.Component {
     let total = 0;
     let avgGrade = 0;
     for (let i = 0; i < gradesArray.length; i++) {
-      total += gradesArray[i].grade;
+      total += parseInt(gradesArray[i].grade);
     }
     avgGrade = Math.ceil(total / gradesArray.length);
     return avgGrade.toString();
