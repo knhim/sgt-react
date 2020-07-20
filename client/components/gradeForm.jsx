@@ -44,18 +44,37 @@ export default class GradeForm extends React.Component {
 
   render() {
     return (
-      <div className="col-4">
+      <div className="col-5">
         <form onSubmit={this.handleSubmit}>
-          <label><i className="fa fa-user"></i></label>
-          <input type="text" placeholder="Name" value={this.state.name} onChange={this.handleChangeName} />
-          <label><i className="fa fa-list-alt"></i></label>
-          <input type="text" placeholder="Course" value={this.state.course} onChange={this.handleChangeCourse}/>
-          <label><i className="fa fa-graduation-cap"></i></label>
-          <input type="text" placeholder="Grade" value={this.state.grade} onChange={this.handleChangeGrade} />
-          <button type="submit">Add</button>
-          <button type="reset">Cancel</button>
+
+          <div className="input-group mb-2">
+            <div className="input-group-prepend">
+              <i className="fa fa-user input-group-text"></i>
+            </div>
+            <input type="text" className="form-control" placeholder="Name" value={this.state.name} onChange={this.handleChangeName} />
+          </div>
+
+          <div className="input-group mb-2">
+            <div className="input-group-prepend">
+              <i className="fa fa-list-alt input-group-text"></i>
+            </div>
+            <input type="text" className="form-control" placeholder="Course" value={this.state.course} onChange={this.handleChangeCourse} />
+          </div>
+
+          <div className="input-group mb-2">
+            <div className="input-group-prepend">
+              <i className="fa fa-graduation-cap input-group-text"></i>
+            </div>
+            <input type="text" className="form-control" placeholder="Grade" value={this.state.grade} onChange={this.handleChangeGrade} />
+          </div>
+
+          <div>
+            <button className="btn btn-success" type="submit">Add</button>
+            <button className="btn btn-outline-secondary ml-2" type="reset">Cancel</button>
+          </div>
+
         </form>
-      </div>
+      </div >
     );
   }
 }

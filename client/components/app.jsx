@@ -36,7 +36,7 @@ class App extends React.Component {
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newGrade, null, 2)
+      body: JSON.stringify(newGrade)
     };
     const fetchRequest = fetch(url, init);
     fetchRequest.then(response => {
