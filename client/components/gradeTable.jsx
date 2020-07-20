@@ -5,7 +5,7 @@ function GradeTable(props) {
   const gradesArray = props.grades;
 
   const mapGrades = gradesArray.map((objectGrades, index) =>
-    <Grade key={index} name={objectGrades.name} course={objectGrades.course} grade={objectGrades.grade} onDelete={props.onDelete}/>
+    <Grade key={index} name={objectGrades.name} course={objectGrades.course} grade={objectGrades.grade} id={objectGrades.id} onDelete={props.onDelete}/>
   );
 
   return (

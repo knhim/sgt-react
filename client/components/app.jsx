@@ -52,9 +52,8 @@ class App extends React.Component {
   deleteGrade(id) {
     const newArray = [...this.state.grades];
     let index = null;
-
     for (let i = 0; i < newArray.length; i++) {
-      if (this.state.grades[i].id === newArray[i].id) {
+      if (id === newArray[i].id) {
         index = i;
       }
     }
@@ -72,7 +71,6 @@ class App extends React.Component {
         this.setState({ grades: newArray });
       });
     });
-
   }
 
   render() {
